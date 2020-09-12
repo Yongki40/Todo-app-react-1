@@ -1,7 +1,17 @@
 import React from 'react';
 import TodoItem from './TodoItem';
+import todoData from './todoData';
 
 function Todos() {
+  const todoComponents = todoData.map((todo)=>{
+      return (
+        <TodoItem
+          key={todo.id}
+          taskName={todo.title}
+          complete={todo.complete}
+        ></TodoItem>
+      );
+  });
   return (
     <React.Fragment>
       {/* <TodoItem
@@ -44,15 +54,7 @@ function Todos() {
          }}
       ></TodoItem> */}
 
-      <TodoItem
-        taskName= "Breakfast"
-      ></TodoItem>
-      <TodoItem
-        taskName= "Lunch"
-      ></TodoItem>
-      <TodoItem
-        taskName= "Shower"
-      ></TodoItem>
+      {todoComponents}
     </React.Fragment>
   );
 }

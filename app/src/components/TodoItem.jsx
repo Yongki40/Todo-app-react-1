@@ -17,8 +17,9 @@ function TodoItem(props) {
             <p>Email: {props.contact.email}</p><br/>
         </div> */}
 
-        <input type="checkbox" name="" id=""/>
-        <p>{props.taskName}</p>
+        <input type="checkbox" name="" id="" checked={props.complete}/>
+        <span>{props.taskName}</span>
+        <br/>
     </React.Fragment>
   );
 }
